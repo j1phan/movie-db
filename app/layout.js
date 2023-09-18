@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
             <body className="bg-zinc-900 text-zinc-200">
                 <div className="flex flex-col gap-10 items-center p-6">
                     <SearchBar />
-                    <div  className="flex flex-col w-full px-10"> {children} </div>
+                    <div className="flex flex-col w-full px-10"> {children} </div>
                 </div>
             </body>
         </html>

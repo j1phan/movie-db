@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+// Read Access Token from TMDB api
+// Would normally store in a .env file, but for the sake of simplicity, I'm
+// just hardcoding it here.
 const options = {
     method: "GET",
     headers: {
@@ -8,6 +11,7 @@ const options = {
             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYmMyMWMwNGExOTg4Yjk0NjhjN2NkYmJjZDc1NjM0YyIsInN1YiI6IjY1MDY0N2RmNDJkOGE1MDBmZTNhYTI4OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.M1lHZN4PJmLBxZ0fueQiQp9D7XBJGkkfKl3rDI23gWs",
     },
 };
+
 export async function GET(request) {
     const { searchParams } = new URL(request.url)
     const query = searchParams.get("q")
@@ -21,11 +25,11 @@ export async function GET(request) {
             return response
         })
         .catch((err) => console.error(err))
-    return NextResponse.json( 
+    return NextResponse.json(
         {
-            results: res.results, 
-            total_pages: res.total_pages, 
+            results: res.results,
+            total_pages: res.total_pages,
             total_results: res.total_results
-        } 
+        }
     )
 }

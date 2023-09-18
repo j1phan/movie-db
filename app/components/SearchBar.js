@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation"
 const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const router = useRouter();
+
+    // Pushes the query to URL so that we can grab it later for the API route
     const onSearch = (event) => {
         event.preventDefault();
         router.push(`/search?q=${searchQuery}`);
