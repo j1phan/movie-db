@@ -1,4 +1,11 @@
-## Getting Started
+## Running locally in development mode
+
+To get started, open your terminal, clone the repository and run 
+`npm install && npm run dev`:
+
+    git clone https://github.com/j1phan/movie-db/
+    npm install
+    npm run dev
 
 First, run the development server:
 
